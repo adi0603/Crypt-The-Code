@@ -62,6 +62,7 @@
                                   text: "Your time is over.\nCrypted Code :<?php echo $crypted_code[$randomnumber];?>\nHint : <?php echo $hint[$randomnumber];?>\n Answer : <?php echo $answer[$randomnumber];?>",
                                   imageUrl: 'image/stop.png'
                                 });
+                      
                     }
                     function sleep(ms) 
                     {
@@ -150,6 +151,7 @@
           <div class="code">
             <input type="submit" name="click" onClick="sure();" value="START">
           </div>
+        
         </center>
         </div>
       </main>
