@@ -1,3 +1,13 @@
+<?php
+  $crypted_code = array('0'=>'--------','1'=>'bag agra luck low oak own new','2'=>'kill ill the eat','3'=>'and has sand dew','4'=>'bit your teen eve','5'=>'jug along vertical after');
+  $hint = array('0'=>'--------','1'=>'A flexible bag that can be inflated with a gas.','2'=>'A frame covered with cloth or plastic and joined to a long string, that you fly in the air','3'=>'To use your teeth to cut into something or someone','4'=>'A unit of digital information that most commonly consists of eight bits','5'=>'A programming language that produces software for multiple platforms');
+  $answer = array('0'=>'--------','1'=>'balloon','2'=>'kite','3'=>'bite','4'=>'byte','5'=>'java');
+  $randomnumber=0;
+  if(isset($_POST['submit']))
+  {
+    $randomnumber=rand(1,5);
+  }
+?>
 <html>
   <head>
     <link rel="icon" type="image/png" href="image/logo.png"/>
@@ -14,7 +24,7 @@
           <h2 class="logo">Crypt The Code</h2>
           <ul>
             <li>
-              <a href="game.html"></a>
+              <a href="index.php"></a>
             </li>
             <li>
               <a href="#">A4ALGO &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ABACUS</a>
@@ -45,26 +55,11 @@
       </style>
 
       <script type="text/javascript">
-        var crypted_code= new Array("bag agra luck low oak own new","kill ill the eat","and has sand dew","bit your teen eve","jug along vertical after");
-        var hint=new Array("A flexible bag that can be inflated with a gas.","A frame covered with cloth or plastic and joined to a long string, that you fly in the air","To use your teeth to cut into something or someone","A unit of digital information that most commonly consists of eight bits", "A programming language that produces software for multiple platforms");
-        var answer=new Array("balloon","kite","bite","byte","java");
-        var random;
-        function questions()
-        {
-          var min=1; 
-          var max=2; 
-          random = parseInt(Math.random() * (+max - +min) + +min);
-        }
-
-                    function output()
-                    {
-                      return random;
-                    }
                     function stop()
                     {
                       swal({
                                   title: "STOP",
-                                  text: "Your time is over.\nAnswer : "+answer[random-1],
+                                  text: "Your time is over.\nCrypted Code :<?php echo $crypted_code[$randomnumber];?>\nHint : <?php echo $hint[$randomnumber];?>\n Answer : <?php echo $answer[$randomnumber];?>",
                                   imageUrl: 'image/stop.png'
                                 });
                     }
@@ -98,17 +93,8 @@
                         }
                       }
                     }
+    
                     function sure()
-                    {
-                      var result=confirm("Are You ready to start.")
-                      if(result)
-                      {
-                        questions();
-                        display1();
-                        display2();
-                      }
-                    }
-                    function sure2()
                     {
                       var result=confirm("Press OK to start.")
                       if (result)
@@ -121,38 +107,18 @@
 
       <main class="page-main">
         <div class="container">
-          <table id="myTable">
+
+          <form action="" method="POST">
+          <table>
             <caption>QUINTESSENCE &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; TECH EMPORIUM</caption>
             <tbody>
               <tr id="myRow">
                 <td colspan="2">Crypted Code</td>
-                <td colspan="4">---------
-                  <script type="text/javascript">
-                    function display1()
-                    {
-                      var x = document.getElementById("myTable").rows[0].cells;
-                        x[1].innerHTML = crypted_code[output()-1];
-                    }                   
-                  </script></td>
-                <td colspan="1" rowspan="3">
-                <div class="month">
-                  <div class="textbox">
-                    <input type="text" name="enteryear" placeholder="Timer" class='nice' id="timer" disabled>
-                  </div>
-                  </div>
-                  
-                </td>
+                <td colspan="4"><?php echo $crypted_code[$randomnumber]; ?></td>
               </tr>
               <tr>
                 <td colspan="2">Hint</td>
-                <td colspan="4">---------
-                  <script type="text/javascript">
-                    function display2()
-                    {
-                      var x = document.getElementById("myTable").rows[1].cells;
-                        x[1].innerHTML = hint[output()-1];
-                    }                  
-                  </script></td>
+                <td colspan="4"><?php echo $hint[$randomnumber]; ?></td>
               </tr>
               <tr>
                 <td colspan="2">Rules:</td>
@@ -168,17 +134,23 @@
               <tr>
                 <td colspan="6" >
                   <div class="code">
-                    <input type="submit" name="click" onClick="sure();" value="Generate Crypted Code">
-                  </div>
-                </td>
-                <td colspan="1">
-                  <div class="code">
-                    <input type="submit" name="click" onClick="sure2();" value="START">
+                    <input type="submit" name="submit" value="Generate Crypted Code">
                   </div>
                 </td>
               </tr>
             </tbody>
           </table>
+        </form>
+        <center>
+          <div class="month">
+            <div class="textbox">
+              <input type="text" name="enteryear" placeholder="Timer" class='nice' id="timer" disabled>
+            </div>
+          </div>
+          <div class="code">
+            <input type="submit" name="click" onClick="sure();" value="START">
+          </div>
+        </center>
         </div>
       </main>
       <footer class="page-footer">
