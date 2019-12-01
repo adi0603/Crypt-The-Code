@@ -5,7 +5,7 @@
   $randomnumber=0;
   if(isset($_POST['submit']))
   {
-    $randomnumber=rand(1,5);
+    $randomnumber=rand(1,8);
   }
 ?>
 <html>
@@ -57,6 +57,7 @@
       <script type="text/javascript">
                     function stop()
                     {
+                      new Audio("sound/alarm.mp3").play();
                       swal({
                                   title: "STOP",
                                   text: "Your time is over.\nCrypted Code :<?php echo $crypted_code[$randomnumber];?>\nHint : <?php echo $hint[$randomnumber];?>\n Answer : <?php echo $answer[$randomnumber];?>",
@@ -70,9 +71,9 @@
                     }
                     async function time()
                     {
-                      for(var i=0;i>=0;i--)
+                      for(var i=14;i>=0;i--)
                       {
-                        for(var j=20;j>=0;j--)
+                        for(var j=60;j>=0;j--)
                         {
                           var m="",s="";
                           if(i<10)
