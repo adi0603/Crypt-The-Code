@@ -55,6 +55,11 @@
       </style>
 
       <script type="text/javascript">
+                    var check=0;
+                    function convert()
+                    {
+                      check=1;
+                    }
                     function stop()
                     {
                       new Audio("sound/alarm.mp3").play();
@@ -71,10 +76,12 @@
                     }
                     async function time()
                     {
-                      for(var i=14;i>=0;i--)
+                      for(var i=0;i>=0;i--)
                       {
-                        for(var j=60;j>=0;j--)
+                        for(var j=10;j>=0;j--)
                         {
+                          if(check==0)
+                          {
                           var m="",s="";
                           if(i<10)
                           {
@@ -84,15 +91,27 @@
                           {
                             s="0";
                           }
-                          var st="   "+m+i+" : "+s+j;
-                          document.getElementById('timer').value=st;
-                          await sleep(1000);
+                            var st="   "+m+i+" : "+s+j;
+                            document.getElementById('timer').value=st;
+                            await sleep(1000);
+                          }
+                          else
+                          {
+                            stop();
+                            document.getElementById('timer').value="Timer";
+                            break;
+                          }
+                          if(i==0 && j==0)
+                          {
+                            stop();
+                            document.getElementById('timer').value="Timer";
+                          }
                         }
-                        if(i==0)
+                        if (check==0)
                         {
-                          stop();
-                          document.getElementById('timer').value="Timer";
+                          break;
                         }
+              
                       }
                     }
     
@@ -152,7 +171,9 @@
           <div class="code">
             <input type="submit" name="click" onClick="sure();" value="START">
           </div>
-        
+          <div class="code">
+            <input type="submit" name="click" onClick="convert();" value="STOP">
+          </div>
         </center>
         </div>
       </main>
