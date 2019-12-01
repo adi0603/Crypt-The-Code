@@ -102,9 +102,9 @@
                     }
                     async function time()
                     {
-                      for(var i=0;i>=0;i--)
+                      for(var i=14;i>=0;i--)
                       {
-                        for(var j=10;j>=0;j--)
+                        for(var j=60;j>=0;j--)
                         {
                           if(check==0)
                           {
