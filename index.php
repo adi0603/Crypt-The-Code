@@ -51,6 +51,24 @@
 .code input[type="submit"]:focus {
   outline: none;
 }
+.code1 input[type="submit"]{
+  background: red;
+  border-radius: 20px;
+  padding: 8px 30px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+  transition: all 0.25s linear;
+}
+
+.code1 input[type="submit"]:hover{
+  color: red;
+  background: #fff !important;
+}
+.code1 input[type="submit"]:focus {
+  outline: none;
+}
 
       </style>
 
@@ -58,11 +76,19 @@
                     var check=0;
                     function convert()
                     {
-                      check=1;
+                      if(confirm("Are you sure to stop."))
+                      {
+                        check=1;
+                      }
+                      
                     }
                     function stop()
                     {
-                      new Audio("sound/alarm.mp3").play();
+                      if(check==0)
+                      {
+                        new Audio("sound/alarm.mp3").play();
+                      }
+                      
                       swal({
                                   title: "STOP",
                                   text: "Your time is over.\nCrypted Code :<?php echo $crypted_code[$randomnumber];?>\nHint : <?php echo $hint[$randomnumber];?>\n Answer : <?php echo $answer[$randomnumber];?>",
@@ -171,7 +197,7 @@
           <div class="code">
             <input type="submit" name="click" onClick="sure();" value="START">
           </div>
-          <div class="code">
+          <div class="code1">
             <input type="submit" name="click" onClick="convert();" value="STOP">
           </div>
         </center>
