@@ -1,7 +1,7 @@
 <?php
-  $crypted_code = array('0'=>'--------','1'=>'bag agra luck low oak own new','2'=>'kill ill the eat','3'=>'and has sand dew','4'=>'bit your teen eve','5'=>'jug along vertical after');
-  $hint = array('0'=>'--------','1'=>'A flexible bag that can be inflated with a gas.','2'=>'A frame covered with cloth or plastic and joined to a long string, that you fly in the air','3'=>'To use your teeth to cut into something or someone','4'=>'A unit of digital information that most commonly consists of eight bits','5'=>'A programming language that produces software for multiple platforms');
-  $answer = array('0'=>'--------','1'=>'balloon','2'=>'kite','3'=>'bite','4'=>'byte','5'=>'java');
+  $crypted_code = array('0'=>'--------','1'=>'bag agra luck low oak own new','2'=>'kill ill the eat','3'=>'and has sand dew','4'=>'bit your teen eve','5'=>'jug along vertical after','6'=>'know who how','7'=>'man is like knight','8'=>'wow in new');
+  $hint = array('0'=>'--------','1'=>'A flexible bag that can be inflated with a gas.','2'=>'A frame covered with cloth or plastic and joined to a long string, that you fly in the air','3'=>'To use your teeth to cut into something or someone','4'=>'A unit of digital information that most commonly consists of eight bits','5'=>'A programming language that produces software for multiple platforms','6'=>'A sensational success,impress and excite (someone) greatly.','7'=>'An opaque white fluid rich in fat and protein.','8'=>'Be successful or victorious in a contest or conflict.');
+  $answer = array('0'=>'--------','1'=>'balloon','2'=>'kite','3'=>'bite','4'=>'byte','5'=>'java','6'=>'wow','7'=>'milk','8'=>'win');
   $randomnumber=0;
   if(isset($_POST['submit']))
   {
@@ -10,8 +10,6 @@
 ?>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="image/logo.png"/>
     <title>Crypt The Code</title>
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -26,10 +24,10 @@
           <h2 class="logo">Crypt The Code</h2>
           <ul>
             <li>
-              <a href="index.php"></a>
+              <a href="#">A4ALGO &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ABACUS</a>
             </li>
             <li>
-              <a href="#">A4ALGO &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ABACUS</a>
+              <a href="index.php">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;REFRESH</a>
             </li>
           </ul>
         </nav>
