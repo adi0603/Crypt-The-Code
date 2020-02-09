@@ -10,6 +10,8 @@
 ?>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="image/logo.png"/>
     <title>Crypt The Code</title>
     <link rel="stylesheet" type="text/css" href="index.css">
