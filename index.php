@@ -135,11 +135,11 @@
                             document.getElementById('timer').value="Timer";
                           }
                         }
-                        if (check==0)
-                        {
-                          break;
-                        }
-              
+                      //  if (check==0)
+                       // {
+                       //   break;
+                      //  }
+                        
                       }
                     }
     
